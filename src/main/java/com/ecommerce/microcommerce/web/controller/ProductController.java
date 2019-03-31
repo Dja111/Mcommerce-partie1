@@ -72,18 +72,23 @@ public class ProductController {
 
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
 
-        Product productAdded =  productDao.save(product);
+        if(product.getPrix()== 0){
+            throw new ProduitIntrouvableException("Impossible d'effectuer votre" +
+                    "requete car "+product.getNom() + " doit avoir un prix de vente superieur a 0");
+        }else {
+            Product productAdded =  productDao.save(product);
 
-        if (productAdded == null)
-            return ResponseEntity.noContent().build();
+            if (productAdded == null)
+                return ResponseEntity.noContent().build();
 
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(productAdded.getId())
-                .toUri();
+            URI location = ServletUriComponentsBuilder
+                    .fromCurrentRequest()
+                    .path("/{id}")
+                    .buildAndExpand(productAdded.getId())
+                    .toUri();
 
-        return ResponseEntity.created(location).build();
+            return ResponseEntity.created(location).build();
+        }
     }
 
     @DeleteMapping (value = "/Produits/{id}")

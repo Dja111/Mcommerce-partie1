@@ -1,0 +1,75 @@
+{
+	"id": "3bfef9ca-8b98-4bef-a1e6-2972cc0fa87e",
+	"name": "Test",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"8e87b204-a799-499f-88e3-b24823c67250",
+		"969b49e0-36f7-4788-89d9-bbb8b96d8fb8",
+		"00ca822c-3f99-4173-bcb8-341ebeca00f7"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "00ca822c-3f99-4173-bcb8-341ebeca00f7",
+			"name": "http://localhost:9090/Produits",
+			"url": "http://localhost:9090/Produits",
+			"description": "ajouter un nouveau Produit",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"name": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"type": "text"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"rawModeData": " {\n        \"id\": 0,\n        \"nom\": \"Robot\",\n        \"prix\": 1500,\n        \"prixAchat\": 200\n }",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8e87b204-a799-499f-88e3-b24823c67250",
+			"name": "http://localhost:9090/Produits/AdminProduits",
+			"url": "http://localhost:9090/Produits/trier",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		},
+		{
+			"id": "969b49e0-36f7-4788-89d9-bbb8b96d8fb8",
+			"name": "http://localhost:9090/Produits/trier",
+			"url": "http://localhost:9090/Produits/trier",
+			"description": "",
+			"data": null,
+			"dataMode": null,
+			"headerData": null,
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": null,
+			"folder": null,
+			"pathVariables": {}
+		}
+	]
+}

@@ -120,6 +120,14 @@ public class ProductController {
         return  result;
     }
 
+    // trier les produit et les classer par ordre alphabetique
+
+
+    @GetMapping(value = "/Produits/trier")
+    public List<Product> trierProduitsParOrdreAlphabetique(){
+        return productDao.findByOrderByNomAsc();
+    }
+
 
 
 }
